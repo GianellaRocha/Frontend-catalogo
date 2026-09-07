@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="b1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#bd866a"/>
+      <stop offset="1" stop-color="#a96f53"/>
+    </linearGradient>
+    <radialGradient id="b1-mancha" cx="0.9" cy="0.1" r="0.6">
+      <stop offset="0" stop-color="#f4ecdc" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#f4ecdc" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="400" fill="url(#b1)"/>
+  <rect width="1200" height="400" fill="url(#b1-mancha)"/>
+  <circle cx="1040" cy="90" r="110" fill="#e9dcc0" opacity="0.9"/>
+  <circle cx="1040" cy="90" r="70" fill="#89685f"/>
+  <circle cx="1040" cy="90" r="32" fill="#e9dcc0"/>
+  <g stroke="#e9dcc0" stroke-width="7" stroke-linecap="round" opacity="0.85">
+    <path d="M1040 10v28"/>
+    <path d="M1040 142v28"/>
+    <path d="M960 90h28"/>
+    <path d="M1092 90h28"/>
+    <path d="M985 35l20 20"/>
+    <path d="M1075 125l20 20"/>
+    <path d="M1095 35l-20 20"/>
+    <path d="M1005 125l-20 20"/>
+  </g>
+  <text x="80" y="180" font-family="Georgia, Cambria, serif" font-size="52" font-weight="bold" fill="#f4ecdc">Hecho a mano,</text>
+  <text x="80" y="244" font-family="Georgia, Cambria, serif" font-size="52" font-weight="bold" fill="#f4ecdc">con amor</text>
+  <text x="82" y="292" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#f4ecdc" opacity="0.92">Piezas únicas que acompañan tu día a día</text>
+  <rect x="82" y="315" width="200" height="48" rx="24" fill="#f4ecdc"/>
+  <text x="182" y="347" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" fill="#a96f53">Ver catálogo</text>
+</svg>

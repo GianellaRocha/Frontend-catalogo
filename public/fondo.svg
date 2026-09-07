@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="fondo-base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#faf5ea"/>
+      <stop offset="0.55" stop-color="#f4ecdc"/>
+      <stop offset="1" stop-color="#e9dcc0"/>
+    </linearGradient>
+    <radialGradient id="mancha-terracota" cx="0.15" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#bd866a" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#bd866a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mancha-marron" cx="0.88" cy="0.92" r="0.65">
+      <stop offset="0" stop-color="#89685f" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#89685f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sol-suave" cx="0.6" cy="0.35" r="0.5">
+      <stop offset="0" stop-color="#bd866a" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#bd866a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#fondo-base)"/>
+  <rect width="1200" height="800" fill="url(#mancha-terracota)"/>
+  <rect width="1200" height="800" fill="url(#mancha-marron)"/>
+  <circle cx="700" cy="300" r="380" fill="url(#sol-suave)"/>
+  <path d="M-20 660 Q280 580 600 668 T1220 648 L1220 840 L-20 840 Z" fill="#e9dcc0" opacity="0.8"/>
+  <path d="M-30 720 Q240 640 560 730 T1230 700" stroke="#bd866a" stroke-opacity="0.28" stroke-width="3" fill="none"/>
+  <path d="M-30 772 Q260 704 580 778 T1230 756" stroke="#89685f" stroke-opacity="0.18" stroke-width="2.5" fill="none"/>
+  <circle cx="180" cy="160" r="10" fill="#bd866a" opacity="0.55"/>
+  <circle cx="210" cy="140" r="6" fill="#bd866a" opacity="0.4"/>
+  <circle cx="1030" cy="640" r="9" fill="#89685f" opacity="0.5"/>
+  <circle cx="1055" cy="618" r="5" fill="#89685f" opacity="0.35"/>
+</svg>

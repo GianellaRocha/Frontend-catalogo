@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="b2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#575052"/>
+      <stop offset="1" stop-color="#3d383b"/>
+    </linearGradient>
+    <radialGradient id="b2-mancha" cx="0.1" cy="0.9" r="0.7">
+      <stop offset="0" stop-color="#bd866a" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#bd866a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="400" fill="url(#b2)"/>
+  <rect width="1200" height="400" fill="url(#b2-mancha)"/>
+  <g transform="translate(920,60)">
+    <rect width="200" height="36" rx="18" fill="#bd866a" opacity="0.9"/>
+    <text x="100" y="24" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" fill="#f4ecdc">Nuevos ingresos</text>
+    <text x="100" y="92" text-anchor="middle" font-family="Georgia, Cambria, serif" font-size="34" font-weight="bold" fill="#f4ecdc">Cada semana</text>
+    <text x="100" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#f4ecdc" opacity="0.88">Seguinos para no perderte nada</text>
+  </g>
+  <circle cx="180" cy="150" r="120" fill="#e9dcc0"/>
+  <path d="M148 150h16M148 150l8-14M148 150l-8-14M148 150l14 8M148 150l-14 8M148 150l14-8M148 150l-14-8" stroke="#a96f53" stroke-width="6" stroke-linecap="round"/>
+  <path d="M148 150c0-42 34-76 76-76v30c-25 0-46 21-46 46z" fill="#a96f53"/>
+  <text x="180" y="326" font-family="Georgia, Cambria, serif" font-size="46" font-weight="bold" fill="#f4ecdc">Antü</text>
+  <text x="182" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="19" fill="#f4ecdc" opacity="0.85">Artesanía que brilla como el sol</text>
+</svg>
