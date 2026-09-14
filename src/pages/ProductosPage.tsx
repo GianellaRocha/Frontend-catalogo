@@ -37,16 +37,32 @@ export default function ProductosPage() {
     }
   };
 
-  const categoriaActual = categorias.find(
-    (c) => c.id.toString() === categoriaId,
-  );
+  const categoriaActual = useMemo(() => {
+    if (!categoriaId) return undefined;
+    const buscar = (item: Categoria): Categoria | undefined => {
+      if (item.id.toString() === categoriaId) return item;
+      return item.hijos?.find((h) => h.id.toString() === categoriaId);
+    };
+    for (const raiz of categorias) {
+      const encontrada = buscar(raiz);
+      if (encontrada) return encontrada;
+    }
+    return undefined;
+  }, [categorias, categoriaId]);
+
+  const idsDeCategoriaSeleccionada = useMemo(() => {
+    if (!categoriaActual) return null;
+    const ids = [categoriaActual.id, ...(categoriaActual.hijos ?? []).map((h) => h.id)];
+    return new Set(ids);
+  }, [categoriaActual]);
 
   const filtrados = useMemo(() => {
     const termino = buscar.trim().toLowerCase();
 
     let resultado = productos.filter((p) => {
       const coincideCategoria =
-        !categoriaId || p.categoria?.id.toString() === categoriaId;
+        !idsDeCategoriaSeleccionada ||
+        (p.categoria?.id != null && idsDeCategoriaSeleccionada.has(p.categoria.id));
       const coincideNombre =
         !termino || p.nombre.toLowerCase().includes(termino);
       return coincideCategoria && coincideNombre;
@@ -59,7 +75,7 @@ export default function ProductosPage() {
     }
 
     return resultado;
-  }, [productos, buscar, categoriaId, orden]);
+  }, [productos, buscar, idsDeCategoriaSeleccionada, orden]);
 
   return (
     <div className="envolvente">

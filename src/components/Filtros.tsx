@@ -54,11 +54,25 @@ export default function Filtros({
         aria-label="Filtrar por categoría"
       >
         <option value="">Todas las categorías</option>
-        {categorias.map((categoria) => (
-          <option key={categoria.id} value={categoria.id}>
-            {categoria.nombre}
-          </option>
-        ))}
+        {categorias.map((categoria) => {
+          const hijos = categoria.hijos ?? [];
+          if (hijos.length === 0) {
+            return (
+              <option key={categoria.id} value={categoria.id}>
+                {categoria.nombre}
+              </option>
+            );
+          }
+          return (
+            <optgroup key={categoria.id} label={categoria.nombre}>
+              {hijos.map((hijo) => (
+                <option key={hijo.id} value={hijo.id}>
+                  {hijo.nombre}
+                </option>
+              ))}
+            </optgroup>
+          );
+        })}
       </select>
 
       <select

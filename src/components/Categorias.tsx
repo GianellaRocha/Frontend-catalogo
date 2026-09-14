@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { Categoria } from '../types';
-import { obtenerImagenCategoria } from '../utils/format';
+import { cantidadProductosCategoria, obtenerImagenCategoria } from '../utils/format';
 
 interface CategoriasProps {
   categorias: Categoria[];
@@ -8,7 +8,7 @@ interface CategoriasProps {
 
 export default function Categorias({ categorias }: CategoriasProps) {
   const productosTotal = categorias.reduce(
-    (suma, c) => suma + (c.productos?.length ?? 0),
+    (suma, c) => suma + cantidadProductosCategoria(c),
     0,
   );
 
@@ -48,7 +48,7 @@ export default function Categorias({ categorias }: CategoriasProps) {
 
         {categorias.map((categoria) => {
           const imagen = obtenerImagenCategoria(categoria);
-          const cantidad = categoria.productos?.length ?? 0;
+          const cantidad = cantidadProductosCategoria(categoria);
           return (
             <Link
               key={categoria.id}

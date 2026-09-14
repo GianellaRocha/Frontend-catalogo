@@ -15,11 +15,24 @@ export function obtenerImagenProducto(producto: Producto): string | null {
   return producto.imagenes?.[0]?.url ?? null;
 }
 
+export function cantidadProductosCategoria(categoria: Categoria): number {
+  const propios = categoria.productos?.length ?? 0;
+  const hijos = categoria.hijos?.reduce(
+    (suma, hijo) => suma + (hijo.productos?.length ?? 0),
+    0,
+  ) ?? 0;
+  return propios + hijos;
+}
+
 export function obtenerImagenCategoria(categoria: Categoria): string | null {
   const imagenLocal = config.categoriaImagenes[categoria.nombre];
   if (imagenLocal) return imagenLocal;
   if (categoria.imagen) return categoria.imagen;
   const primerProducto = categoria.productos?.[0];
   if (primerProducto) return obtenerImagenProducto(primerProducto);
+  const productoHijo = categoria.hijos
+    ?.flatMap((hijo) => hijo.productos ?? [])
+    .find((p) => p.imagenes?.length);
+  if (productoHijo) return obtenerImagenProducto(productoHijo);
   return null;
 }

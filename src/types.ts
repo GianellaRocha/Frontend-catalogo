@@ -2,6 +2,7 @@ export interface Categoria {
   id: number;
   nombre: string;
   imagen?: string | null;
+  hijos?: Categoria[];
   productos?: Producto[];
 }
 
