@@ -30,8 +30,13 @@ function leerCategoriaImagenes(
   }
 }
 
+const API_URL_PRODUCCION = 'https://backend-ant-zn4x.onrender.com/api';
+
+const envUrl = (env.VITE_API_URL ?? '').trim();
+const apiUrl = envUrl || (import.meta.env.PROD ? API_URL_PRODUCCION : '/api');
+
 export const config = {
-  apiUrl: env.VITE_API_URL ?? '/api',
+  apiUrl,
   whatsappNumber: env.VITE_WHATSAPP_NUMBER ?? '',
   negocioNombre: env.VITE_NEGOCIO_NOMBRE ?? 'Antü',
   logo: env.VITE_LOGO_URL ?? '/logo.svg',
