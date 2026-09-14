@@ -1,4 +1,5 @@
 import type { Categoria, Producto } from '../types';
+import { config } from '../config';
 
 const formatoPrecio = new Intl.NumberFormat('es-AR', {
   style: 'currency',
@@ -15,6 +16,8 @@ export function obtenerImagenProducto(producto: Producto): string | null {
 }
 
 export function obtenerImagenCategoria(categoria: Categoria): string | null {
+  const imagenLocal = config.categoriaImagenes[categoria.nombre];
+  if (imagenLocal) return imagenLocal;
   if (categoria.imagen) return categoria.imagen;
   const primerProducto = categoria.productos?.[0];
   if (primerProducto) return obtenerImagenProducto(primerProducto);

@@ -39,6 +39,7 @@ export default function Categorias({ categorias }: CategoriasProps) {
               <rect x="14" y="14" width="7" height="7" rx="1.5" />
             </svg>
           </div>
+          <div className="categoria-capa" />
           <span className="categoria-nombre">Todos</span>
           <span className="categoria-sub">
             {productosTotal} producto{productosTotal === 1 ? '' : 's'}
@@ -66,6 +67,7 @@ export default function Categorias({ categorias }: CategoriasProps) {
                   <span>Sin foto</span>
                 </div>
               )}
+              <div className="categoria-capa" />
               <span className="categoria-nombre">{categoria.nombre}</span>
               <span className="categoria-sub">
                 {cantidad} producto{cantidad === 1 ? '' : 's'}

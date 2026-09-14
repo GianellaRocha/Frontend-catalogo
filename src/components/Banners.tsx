@@ -24,14 +24,23 @@ export default function Banners() {
         className="banners-vista"
         style={{ transform: `translateX(-${indice * 100}%)` }}
       >
-        {config.banners.map((src) => (
-          <img
-            key={src}
-            className="banner-img"
-            src={src}
-            alt="Promoción Antü"
-            loading="lazy"
-          />
+        {config.banners.map((banner) => (
+          <div className="banner-slide" key={banner.url}>
+            <img
+              className="banner-img"
+              src={banner.url}
+              alt={banner.titulo ?? 'Promoción Antü'}
+              loading="lazy"
+            />
+            {(banner.titulo || banner.subtitulo) && (
+              <div className="banner-capa">
+                {banner.titulo && <p className="banner-titulo">{banner.titulo}</p>}
+                {banner.subtitulo && (
+                  <p className="banner-subtitulo">{banner.subtitulo}</p>
+                )}
+              </div>
+            )}
+          </div>
         ))}
       </div>
 
@@ -54,9 +63,9 @@ export default function Banners() {
             {'\u203a'}
           </button>
           <div className="banner-puntos">
-            {config.banners.map((src, i) => (
+            {config.banners.map((banner, i) => (
               <button
-                key={src}
+                key={banner.url}
                 type="button"
                 className={`banner-punto ${i === indice ? 'activo' : ''}`}
                 onClick={() => irAl(i)}
